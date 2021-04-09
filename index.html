@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/home.css">   
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" ></script>
+
+    <div class='container'>
+        <div class="row">
+            <div class="col-12">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Tic Tac Toe</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">&nbsp;</div>
+        </div>
+        
+        <div class="row rounded" id='modeselection'>
+            <div class="col">
+                <div class="row">
+                    <div class="col-12">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h3 class='text-center'>
+                            Select your mode
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">&nbsp;</div>
+                </div>
+                <div class="row">                    
+                    <!-- <div class="col"></div> -->
+                    <div class="col">
+                        <button type="button" id='p1vsp2btn' class='btn btn-outline-success text-nowrap btn-block'>
+                            Player 1 vs Player 2
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" id='p1vscompbtn' class='btn btn-outline-success text-nowrap btn-block'>
+                            Player 1 vs Computer
+                        </button>
+                    </div>
+                    <!-- <div class="col"></div> -->
+                </div>
+                <div class="row">
+                    <div class="col-12">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col-12">&nbsp;</div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="row rounded" id="p1vsp2div">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col">&nbsp;</div>
+                </div>
+                <div class="row" >
+                    <div class="col text-center" id='p1vp2p1'>
+                        <h4>Player 1's turn - ❌</h2>
+                    </div>
+                    <div class="col text-center" id='p1vp2p2'>
+                        <h4>Player 2's turn - ⭕</h2>
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <div class="alert alert-success alert-dismissible fade show" id='p1vp2alert'>
+                            <h5 id='p1vp2para'></h5>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <div class="alert alert-primary" id='p1vp2draw'>
+                            <h5 id="p1vp2drawpara">It's a draw</h5>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col">&nbsp;</div>
+                </div>
+                <div class="row" >
+                    <div class="col-2"></div>
+                    <div class="col-8 text-center">
+                        <table class='table table-bordered' focus>
+                            <tr scope="row">
+                                <td scope="col" id='cell11'> 
+                                    &nbsp;                                  
+                                </td>  
+                                <td scope="col" id='cell12'>
+                                    &nbsp;
+                                </td>  
+                                <td scope="col" id='cell13'>
+                                    &nbsp;
+                                </td>                                                                         
+                            </tr>                           
+                            <tr scope="row">
+                                <td scope="col" id='cell21'>
+                                    &nbsp;
+                                </td>  
+                                <td scope="col" id='cell22'>
+                                    &nbsp;
+                                </td>  
+                                <td scope="col" id='cell23'>
+                                    &nbsp;
+                                </td>                                                                         
+                            </tr>                           
+                            <tr scope="row">
+                                <td scope="col" id='cell31'>
+                                    &nbsp;
+                                </td>  
+                                <td scope="col" id='cell32'>
+                                    &nbsp;
+                                </td>  
+                                <td scope="col" id='cell33'>
+                                    &nbsp;
+                                </td>                                                                         
+                            </tr>                           
+                        </table>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col">&nbsp;</div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary btn-block" id="reset1">Reset</button>
+                        <a href='index.html' class="btn btn-danger btn-block">Go back</a>
+                    </div>
+                    <div class="col">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="row rounded" id="p1vscompdiv">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col text-center" id='p1vcompp1'>
+                        <h4>Player 1's turn - ❌</h2>
+                    </div>
+                    <div class="col text-center" id='p1vcompcomp'>                        
+                        <h4><div class="spinner-border text-danger" id="spinner"></div> &nbsp;Computer's turn - ⭕</h2>
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <div class="alert alert-success alert-dismissible fade show" id='p1vcompalert'>
+                            <h5 id='p1vcomppara'></h5>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <div class="alert alert-primary" id='p1vcompdraw'>
+                            <h5 id="p1vcompdrawpara">It's a draw</h5>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col">&nbsp;</div>
+                </div>
+                <div class="row" >
+                    <div class="col-2"></div>
+                    <div class="col-8 text-center">
+                        <table class='table table-bordered'>
+                            <tr scope="row">
+                                <td scope="col" id='pvccell11'>
+                                    &nbsp;
+                                </td>  
+                                <td scope="col" id='pvccell12'>
+                                    &nbsp;
+                                </td>  
+                                <td scope="col"  id='pvccell13'>
+                                    &nbsp;
+                                </td>                                                                         
+                            </tr>                           
+                            <tr scope="row">
+                                <td scope="col" id='pvccell21'>
+                                    &nbsp;
+                                </td>  
+                                <td scope="col" id='pvccell22'>
+                                    &nbsp;
+                                </td>  
+                                <td scope="col" id='pvccell23'>
+                                    &nbsp;
+                                </td>                                                                         
+                            </tr>                           
+                            <tr scope="row">
+                                <td scope="col" id='pvccell31'>
+                                    &nbsp;
+                                </td>  
+                                <td scope="col" id='pvccell32'>
+                                    &nbsp;
+                                </td>  
+                                <td scope="col" id='pvccell33'>
+                                    &nbsp;
+                                </td>                                                                         
+                            </tr>                           
+                        </table>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col">&nbsp;</div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary btn-block" id="reset2">Reset</button>
+                        <a href='index.html' class="btn btn-danger btn-block">Go back</a>
+                    </div>
+                    <div class="col">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-12">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-12">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-12">&nbsp;</div>
+        </div>
+    </div>    
+    <script src="./public/bundle.js"></script>
+    
+</body>
+</html>

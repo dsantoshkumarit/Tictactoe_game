@@ -1,0 +1,114 @@
+body {
+  background: teal;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgb(160, 74, 74);
+  border-radius: 2vw;
+}
+
+h1 {
+  color: whitesmoke;
+  font-family: "Bubblegum Sans", cursive;
+}
+h4 {
+  color: #312c51;
+}
+
+h3 {
+  color: rgb(14, 153, 44);
+}
+
+#modeselection {
+  background: rgb(42, 44, 59);
+  width: 80%;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+#p1vsp2div {
+  background: rgb(42, 44, 59);
+  display: none;
+  width: 80%;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+#p1vscompdiv {
+  background: rgb(42, 44, 59);
+  display: none;
+  width: 80%;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+#p1vsp2btn {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#p1vscompbtn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+td:hover {
+  border-radius: 5px;
+  animation-name: td;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+}
+
+@keyframes td {
+  100% {
+    background: rgb(97, 99, 112);
+  }
+}
+
+h4 {
+  background-color: #e1bc91;
+  border-radius: 10px;
+}
+
+.table td {
+  width: 4vw;
+  color: white;
+  font-weight: bold;
+  font-size: 4vw;
+  padding: 0;
+}
+
+/* hiding alert msg on load */
+#p1vp2alert,
+#p1vp2draw {
+  display: none;
+}
+
+/* setting center for alerts */
+#p1vp2para,
+#p1vp2drawpara {
+  text-align: center;
+}
+
+#p1vcompalert,
+#p1vcompdraw {
+  display: none;
+}
+
+#p1vcomppara,
+#p1vcompdrawpara {
+  text-align: center;
+}
+
+#spinner {
+  width: 4vw;
+  height: 4vw;
+  border-width: 5px;
+  margin: 2px;
+}
